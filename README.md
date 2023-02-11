@@ -1,12 +1,13 @@
-# 包管理
-## 生成requirements.txt文件
+## 包管理
+**生成requirements.txt文件**
 1. 安装pipreqs库:  pip install pipreqs
 2. 在项目目录使用生成 pipreqs ./ --encoding=utf8 --force
-# 通过requirements.txt 导入包
+
+**通过requirements.txt 导入包**
 pip3 install -r requirements.txt
 
-# Web application Run and Deploy
 
+## Web application Run and Deploy
 <!-- deploy and run in server-->
 this webApp is successfully use in pytyon3.10, windows10
 1. 在服务器上安装pyinstaller -- pip install pyinstaller
@@ -16,9 +17,9 @@ this webApp is successfully use in pytyon3.10, windows10
 5. ./manage runserver 0.0.0.0:6788 --noreload ---run application locally
 
 
-# User Guide
-1.firstly use this webApp need to amend the config.json to input your own apiKey
-2.in the chatbox, you can input '###' to clear all msg history
+## User Guide
+1. firstly use this webApp need to amend the config.json to input your own apiKey
+2. in the chatbox, you can input '###' to clear all msg history
 
 
 ## Django study
@@ -40,6 +41,6 @@ sudo ufw status
 ufw allow 8081
 
 
-Referrence:
+**Referrence:**
 websocket Setup : https://channels.readthedocs.io/en/stable/installation.html
 LayIM: http://layui.org.cn/fly/docs/7.html#tool
