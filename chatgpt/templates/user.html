@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="{% static 'plugins/jquery-3.6.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'plugins/echarts.min.js' %}"></script>
+    <title>financial analysis</title>
+</head>
+<body>
+    <div> 欢迎 {{ n1 }} </div>
+    <div>
+        <button>更新</button>
+    </div>
+    <div id="chart"> </div>
+    
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var myChart = echart.init(document.getElementById('chart'));
+    window.onresize = function(){
+        myChart.resize()
+    }
+    var ajax = new XMLHttpRequest();
+    ajax.
+</script>

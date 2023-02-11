@@ -1,0 +1,322 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <title>Finance Dashboard</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <link rel="stylesheet" href="{% static 'css/font.css' %}">
+        <link rel="stylesheet" href="{% static 'css/xadmin.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/layui/css/layui.css' %}" media="all">
+
+        <script src="{% static 'lib/layui/layui.js' %}" charset="utf-8"></script>
+        <script type="text/javascript" src="{% static 'js/xadmin.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/reconnecting-websocket.js' %}"></script>
+
+        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+        <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <blockquote class="layui-elem-quote">欢迎管理员：liam！ 
+                                <span id="current_time_box" >当前时间:2018-04-25 20:50:53</span>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">数据统计</div>
+                        <div class="layui-card-body ">
+                            <ul class="layui-row layui-col-space10 layui-this x-admin-carousel x-admin-backlog">
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>文章数</h3>
+                                        <p>
+                                            <cite>66</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>会员数</h3>
+                                        <p>
+                                            <cite>12</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>回复数</h3>
+                                        <p>
+                                            <cite>99</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>商品数</h3>
+                                        <p>
+                                            <cite>67</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>文章数</h3>
+                                        <p>
+                                            <cite>67</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6 ">
+                                    <a href="javascript:;" class="x-admin-backlog-body">
+                                        <h3>文章数</h3>
+                                        <p>
+                                            <cite>6766</cite></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">系统操作</div>
+                        <div class="layui-card-body ">
+                            <table class="layui-table">
+                                <tbody>
+                                    <tr>
+                                        <th><button class="btn" onclick="xadmin.updateFinanceData()">更新数据库</button></th>
+                                        <td id="update_console">....</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>服务器地址</th>
+                                        <td>x.xuebingsi.com</td></tr>
+                                    <tr>
+                                        <th>操作系统</th>
+                                        <td>WINNT</td></tr>
+                                    <tr>
+                                        <th>运行环境</th>
+                                        <td>Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9</td></tr>
+                                    <tr>
+                                        <th>PHP版本</th>
+                                        <td>5.6.27</td></tr>
+                                    <tr>
+                                        <th>PHP运行方式</th>
+                                        <td>cgi-fcgi</td></tr>
+                                    <tr>
+                                        <th>MYSQL版本</th>
+                                        <td>5.5.53</td></tr>
+                                    <tr>
+                                        <th>ThinkPHP</th>
+                                        <td>5.0.18</td></tr>
+                                    <tr>
+                                        <th>上传附件限制</th>
+                                        <td>2M</td></tr>
+                                    <tr>
+                                        <th>执行时间限制</th>
+                                        <td>30s</td></tr>
+                                    <tr>
+                                        <th>剩余空间</th>
+                                        <td>86015.2M</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">开发团队</div>
+                        <div class="layui-card-body ">
+                            <table class="layui-table">
+                                <tbody>
+                                    <tr>
+                                        <th>版权所有</th>
+                                        <td>xuebingsi(xuebingsi)
+                                            <a href="http://x.xuebingsi.com/" target="_blank">访问官网</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <style id="welcome_style"></style>
+                <div class="layui-col-md12">
+                    <blockquote class="layui-elem-quote layui-quote-nm">感谢layui,百度Echarts,jquery,本系统由x-admin提供技术支持。</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //以下为 layim 最新版写法
+            var socket = null;
+            var friendId = -2
+            chatBoxTypt = "friend"
+            layui.config({
+                layimPath: "{% static 'lib/layim/dist/' %}"  //配置 layim.js 所在目录
+                ,layimAssetsPath: "{% static 'lib/layim/dist/layim-assets/' %}"  //layim 资源文件所在目录
+            }).extend({
+                layim: layui.cache.layimPath + 'layim' //配置 layim 组件所在的路径
+            }).use(['layim', 'jquery', 'laytpl'], function(layim){
+                var $ = layui.jquery,laytpl = layui.laytpl;
+
+                layim.config({
+                    brief: true, //是否简约模式（如果true则不显示主面板）
+                    init : {
+                        mine: {
+                            username: "笨蛋"
+                            ,id: "100000"
+                            ,status: "online"
+                            ,sign: "笨蛋"
+                            ,avatar: ""
+                        }
+                    }
+                }).chat({
+                    name: 'ChatGPT'
+                    ,type: chatBoxTypt
+                    ,id: friendId
+                    ,isfriend: false
+                    ,isgroup: false
+                    ,chatLog :  layui.cache.layimAssetsPath + 'html/chatlog.html' //聊天记录页面地址，若不开启，剔除该项即可
+
+                });
+                var cache =  layui.layim.cache();
+                var local = layui.data('layim')[cache.mine.id]; //获取当前用户本地数据
+                delete local.chatlog
+                layim.setChatMin();
+
+                //向localStorage同步数据
+                layui.data('layim', {
+                   key: cache.mine.id
+                    ,value: local
+                });
+
+                //把layim对象添加到window上
+                window.layim = layui.layim;
+            	//声明websocket属性
+                var index; 
+                var im = {
+                    init: function() {
+                        if ('WebSocket' in window) {
+                            var host = window.location.host
+                            if(window.location.post != ""){
+                                host = host + ":" + window.location.port;
+                            }
+                            var url = 'ws://' + '127.0.0.1:8000' + '/chatgpt';
+                            socket = new ReconnectingWebSocket(url, null, {debug: true, reconnectInterval: 3000});
+                            im.startListener();
+                        } else {
+                            layer.msg('当前浏览器不支持WebSocket功能，请更换浏览器访问!',{icon: 2,shade: 0.5,time:-1});
+                        }
+                    },
+                    startListener : function() {
+                        if (socket) {
+                            socket.onopen = function(event) {
+                                console.log("连接成功");
+                                layer.close(index);
+                            };
+                            socket.onmessage = function(event) {
+                                console.log("接收到消息:" + event.data);
+                                im.handleMessage(event.data);
+                            };
+
+                            socket.onerror = function() {
+                                socket.close;
+                            };
+                            socket.onclose = function() {
+                                index = layer.msg('你与服务器断开连接，正在尝试重新连接！', {icon: 2,shade: 0.5,time:-1});
+                            }
+                        }
+                    },
+                    //处理接收到的消息
+		            handleMessage : function(data) {
+                        //emit即为发出的事件名，用于区分不同的消息
+                        res = JSON.parse(data);
+                        if(res.emit === 'chatMessage'){
+                            layim.getMessage(res); //res.data即你发送消息传递的数据（阅读：触发发送的消息）
+                        }
+                    }
+                }
+
+                //初始化WebSocket对象
+                im.init();
+
+                //监听发送消息
+                layim.on('sendMessage', function(res){
+                    var cache =  layui.layim.cache();
+                    var local = layui.data('layim')[cache.mine.id]; //获取当前用户本地数据
+
+                    //这里以删除本地聊天记录为例
+                    if(res.mine.content == "###"){
+
+                        delete local.chatlog
+                        //向localStorage同步数据
+                        layui.data('layim', {
+                           key: cache.mine.id
+                            ,value: local
+                        });
+                        layim.getMessage({
+                            system: true //系统消息
+                            ,id: friendId //聊天窗口ID
+                            ,type: chatBoxTypt //聊天窗口类型
+                            ,content: '记录清除成功'
+                        });
+
+                        return
+                    }
+   
+                    var mine = res.mine; //包含我发送的消息及我的信息
+                    var to = res.to; //对方的信息
+
+                    //to的结构如下：
+                    // {avatar: "avatar.jpg",id: "100001",name: "贤心",sign: "这些都是测试数据，实际使用请严格按照该格式返回",type: "friend" //聊天类型，一般分friend和group两种，group即群聊,username: "贤心"}
+
+                    if(local.chatlog[ chatBoxTypt + friendId] != undefined){
+                        res.mine.content = local.chatlog[ chatBoxTypt + friendId]
+                    }
+                    //触发到上述消息后，就可以轻松地发送socket了，如：
+                    socket.send(JSON.stringify({
+                        emit: 'chatMessage' //随便定义，用于在服务端区分消息类型
+                      ,data: res
+                    })); 
+                    
+                });
+
+
+
+            });
+
+        </script> 
+    </body>
+    
+</html>
+
+<script>
+        
+    setInterval(showCurrnetTime,1000) //定时器
+    function showCurrnetTime(){ //定义方法 time
+        let time = new Date();  //实例化日期对象
+        let year=time.getFullYear() //获取年
+        let month=time.getMonth()<10>? ("0"+time.getMonth()):time.getMonth()
+        let day=time.getDate()<10? ("0"+time.getDate()):time.getDate()
+        let h=time.getHours()<10? ("0"+time.getHours()) :time.getHours()        //获取时
+        let m=time.getMinutes()<10? ("0"+time.getMinutes()) :time.getMinutes()      //获取分
+        let s=time.getSeconds()<10? ("0"+time.getSeconds()) :time.getSeconds()        //获取秒
+
+        if(s<10){                        //判定秒 是否小于10秒
+            s="0"+time.getSeconds()      //小于是 在其前加0 01，02，03...
+        }
+        if(time.getMinutes()<10){        //判定分 是否小于10分
+            m="0"+time.getMinutes()+":"  //小于是 在其前加0 01，02，03...
+        }
+        document.getElementById("current_time_box").innerHTML='当前时间'+year+"-"+month+"-"+day+" "+h+":"+m+":"+s  //显示当前时间
+
+   }
+
+</script> 
